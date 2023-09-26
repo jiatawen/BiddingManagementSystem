@@ -4,8 +4,8 @@ drop table if exists T_CONTRACT;
 create table T_CONTRACT
 (
     contract_id    int primary key,
-    party_a        int,
-    party_b        int,
+    party_a_id     int,
+    party_b_id     int,
     create_date    date,
     modify_date    date,
     end_date       date,
@@ -20,6 +20,6 @@ create table T_CONTRACT
     u_a_time       date,
     u_b_power      varchar(200),
     u_b_obligation varchar(200),
-    foreign key (party_a) references t_user(people_id),
-    foreign key (party_b) references t_user(people_id)
+    foreign key (party_a_id) references t_user (people_id),
+    foreign key (party_b_id) references t_user (people_id)
 );
