@@ -17,7 +17,7 @@ public class DBConnection {
 		    }
 		    try { //通过驱动程序管理器获取数据库连接
 		    	//mysql如果你的字符集没有设置，或者没有设置好的话，默认是latin1
-		    	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/supermarket?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8","root","100861");
+		    	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tender?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8","root","100861");
 		    }catch(Exception e){
 	            e.printStackTrace();
 	            System.out.println("获取数据库连接失败！");
