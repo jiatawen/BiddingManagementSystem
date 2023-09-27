@@ -1,0 +1,42 @@
+server:
+  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #supplier_management
+    url: jdbc:mysql://localhost:3306/supplier_management?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+    druid:
+      initial-size: 20
+      max-active: 20
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        enabled: true
+        login-username: root
+        login-password: 123456
+      filter:
+        stat:
+          enabled: true
+          merge-sql: true
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+        slf4j:
+          enabled: true
+      aop-patterns: com.example.demo.service.*
+
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  config-location: classpath:/mybatis-config.xml
+
+  # mybatis-plus??
+mybatis-plus:
+  configuration:
+    #??sql??
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
