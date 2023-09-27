@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BiddingManagement:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>BiddingManagement</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="BiddingManagement-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="BiddingManagement:war exploded" />
+    </root>
+  </artifact>
+</component>
