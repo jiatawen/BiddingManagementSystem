@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddbc1618-a7e1-4a78-a605-b674010cd6a2" name="变更" comment="" />
+    <list default="true" id="314bc0bf-a129-4b98-857b-e7c8c84cf4d7" name="更改" comment="初始化" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,17 +14,30 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/jiatawen" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="jiatawen" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,52 +45,62 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="localRepository" value="D:\jiata\recourse\apache-maven-3.9.1\mvn_resp" />
         <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\jiata\recourse\apache-maven-3.9.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2Vvw3YFrcdd58a6pG5SARFSF8c1" />
+  <component name="ProjectId" id="2VxWMWZhKp1R5TfbMWRS6YdNOSW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/github项目管理/BiddingManagementSystem/pom.xml",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "ef1f8112820c8be98433f91d4249f3ff",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.BiddingManagementApplication">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
+      <module name="BiddingManagementSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BiddingManagementSystem" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BiddingManagementApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="BiddingManagement" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.biddingmanagement.BiddingManagementApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BiddingManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="BiddingManagementSystem" />
+      <module name="BiddingManagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.biddingmanagement.BiddingManagementApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -87,15 +110,22 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="ddbc1618-a7e1-4a78-a605-b674010cd6a2" name="变更" comment="" />
-      <created>1695729662774</created>
+      <changelist id="314bc0bf-a129-4b98-857b-e7c8c84cf4d7" name="更改" comment="" />
+      <created>1695778164746</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695729662774</updated>
-      <workItem from="1695729664385" duration="766000" />
-      <workItem from="1695774620782" duration="4279000" />
-      <workItem from="1695778913710" duration="1696000" />
+      <updated>1695778164746</updated>
+      <workItem from="1695778167926" duration="3237000" />
     </task>
+    <task id="LOCAL-00001" summary="初始化">
+      <option name="closed" value="true" />
+      <created>1695781364978</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695781364978</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,22 +136,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
   </component>
 </project>
