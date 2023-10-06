@@ -1,0 +1,10 @@
+{
+    "code": 200,
+    "msg": "操作成功",
+    "data": {
+        "name": "John",
+        "age": 30,
+        "city": "New York",
+        "email": "john@example.com"
+    }
+}
