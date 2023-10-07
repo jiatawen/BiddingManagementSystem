@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.BiddingManagementSystem.mapper.ContractMapper">
+    <resultMap id="getController" type="com.example.BiddingManagementSystem.entity.Controller">
+            <result property="id" column="contract_id"></result>
+    </resultMap>
+    <select id="SelectConById" resultMap="getController">
+        select contract_id
+        from t_contract
+        where contract_id = #{id}
+    </select>
+</mapper>
