@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>投标申请列表</title>
+    <link rel="stylesheet" href="/ProjectList.css">
+</head>
+
+<body>
+<header>招投标管理软件系统</header>
+<nav>
+    <ul>
+        <li class="guide"><a href="#">招标申报</a></li>
+        <li class="guide"><a href="#">申报审核</a></li>
+        <li class="guide"><a href="#">编制邀标书</a></li>
+        <li class="guide"><a href="#">投标申请</a></li>
+        <li class="guide"><a href="#">标书审核</a></li>
+        <li class="guide"><a href="#">评标会签</a></li>
+        <li class="guide"><a href="#">评标小组管理</a></li>
+        <li class="guide"><a href="#">评标管理</a></li>
+        <li class="guide"><a href="#">合同签订</a></li>
+        <li class="guide"><a href="#">供方管理</a></li>
+        <li class="guide"><a href="#">招标总结</a></li>
+    </ul>
+</nav>
+<main>
+    <table>
+        <tr class="head">
+            <td>项目编号</td>
+            <td>项目名称</td>
+            <td>项目内容</td>
+            <td>截止时间</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="item:${list}" class="head">
+            <td th:text="${item.getProjectno()}"></td>
+            <td th:text="${item.getProjectname()}"></td>
+            <td th:text="${item.getProjectcontent()}"></td>
+            <td th:text="${item.getFinishdate()}"></td>
+            <td><a th:href="@{/biddingmanagement/view(projectId=${item.getProjectno()})}">查看</a></td>
+        </tr>
+    </table>
+</main>
+
+</div>
+</body>
+
+</html>

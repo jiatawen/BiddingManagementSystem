@@ -1,5 +1,6 @@
-package com.example.biddingmanagement;
+package com.example;
 
+import com.example.biddingmanagement.BiddingManagementApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

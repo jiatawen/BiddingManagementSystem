@@ -25,24 +25,26 @@
     </ul>
 </nav>
 <main>
-    <div class="head">投标申请表<span class="counting">截止倒计时：34:12:36</span></div>
-    <div class="blank">
-        <ul class="ul">
-            <li class="li"><div class="title">项目编号：</div><input type="text"></li>
-            <li class="li"><div class="title">填报日期：</div><input type="text"></li>
-            <li class="li"><div class="title">投标单位：</div><input type="text"></li>
-            <li class="li"><div class="title">单位负责人：</div><input type="text"></li>
-        </ul>
-        <div class="right">
-            <div class="title">附件:</div>
-            <div class="file"><button class="pick">本地选择</button></div>
+    <form action="/biddingmanagement/summit" method="post">
+        <div class="head">投标申请表</div>
+        <div class="blank">
+            <ul class="ul">
+                <li class="li"><div class="title">项目编号：</div><input type="text" name="projectId" th:value="${projectId != null ? projectId : ''}"></li>
+                <li class="li"><div class="title">填报日期：</div><input type="datetime-local" name="OpDate" th:value="${table != null ? table.opDate : ''}"></li>
+                <li class="li"><div class="title">投标单位：</div><input type="text" name="company" th:value="${table != null ? table.company : ''}"></li>
+            </ul>
+            <ul class="ul right">
+                <li class="li"><div class="title">投标编号：</div><input type="text" name="no" th:value="${table != null ? table.no : ''}"></li>
+                <li class="li"><div class="title">单位负责人：</div><input type="text" name="principal" th:value="${table != null ? table.principal : ''}"></li>
+                <li class="li"><div class="title">填报人：</div><input type="text" name="userid" th:value="${table != null ? table.userid : ''}"></li>
+            </ul>
+            <div class="bottom">
+                <div class="title">备注：</div>
+                <input type="text" class="comment" name="comment">
+            </div>
+            <button class="summit">提交</button>
         </div>
-        <div class="bottom">
-            <div class="title">备注：</div>
-            <div class="comment"></div>
-        </div>
-        <button class="summit">提交</button>
-    </div>
+    </form>
 </main>
 
 </div>

@@ -1,6 +1,7 @@
 ul,li{
     list-style: none;
 }
+
 header{
     border: 2px solid black;
     font-size: 25px;
@@ -63,7 +64,7 @@ main{
 .li{
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    padding-top:30px;
 }
 .title{
     width: 150px;
@@ -83,17 +84,12 @@ input{
     margin-left: 20px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
+
+
 .right{
     position: absolute;
     left: 450px;
-    top:20px;
-}
-.right .file{
-    width: 600px;
-    height: 200px;
-    border: 2px solid black;
-    margin-top: 10px;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+    top:-10px;
 }
 .pick{
     width: 80px;
@@ -103,7 +99,6 @@ input{
 }
 
 .bottom{
-    margin-top: 20px;
     position: relative;
 
 }
