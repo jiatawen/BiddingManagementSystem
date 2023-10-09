@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiata.mapper.TContractMapper">
+
+    <resultMap id="BaseResultMap" type="com.jiata.contract.TContract">
+            <id property="contractId" column="contract_id" jdbcType="INTEGER"/>
+            <result property="partyAId" column="party_a_id" jdbcType="INTEGER"/>
+            <result property="partyBId" column="party_b_id" jdbcType="INTEGER"/>
+            <result property="createDate" column="create_date" jdbcType="DATE"/>
+            <result property="modifyDate" column="modify_date" jdbcType="DATE"/>
+            <result property="endDate" column="end_date" jdbcType="DATE"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="place" column="place" jdbcType="VARCHAR"/>
+            <result property="scale" column="scale" jdbcType="VARCHAR"/>
+            <result property="clause" column="clause" jdbcType="VARCHAR"/>
+            <result property="breach" column="breach" jdbcType="VARCHAR"/>
+            <result property="supplement" column="supplement" jdbcType="VARCHAR"/>
+            <result property="uAMoney" column="u_a_money" jdbcType="DOUBLE"/>
+            <result property="uATime" column="u_a_time" jdbcType="DATE"/>
+            <result property="uBPower" column="u_b_power" jdbcType="VARCHAR"/>
+            <result property="uBObligation" column="u_b_obligation" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        contract_id,party_a_id,party_b_id,
+        create_date,modify_date,end_date,
+        title,name,place,
+        scale,clause,breach,
+        supplement,u_a_money,u_a_time,
+        u_b_power,u_b_obligation
+    </sql>
+    <select id="selectAllContract" resultType="com.jiata.contract.TContract">
+        select * from tender.t_contract;
+    </select>
+</mapper>
