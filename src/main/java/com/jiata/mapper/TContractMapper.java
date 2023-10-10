@@ -1,7 +1,6 @@
 package com.jiata.mapper;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.jiata.contract.TContract;
+import com.jiata.entity.TContract;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,8 +15,12 @@ import java.util.List;
 @Mapper
 public interface TContractMapper extends BaseMapper<TContract> {
 
-    List<TContract> selectAllContract();
+    public List<TContract> selectAllContract();
+    public TContract selectAllByContractId(Integer id);
 
+    public Integer insertContract(TContract tContract);
+
+    public boolean deleteContractById(Integer id);
 }
 
 

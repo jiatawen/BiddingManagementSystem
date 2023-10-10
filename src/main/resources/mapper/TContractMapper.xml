@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jiata.mapper.TContractMapper">
 
-    <resultMap id="BaseResultMap" type="com.jiata.contract.TContract">
+    <resultMap id="BaseResultMap" type="com.jiata.entity.TContract">
             <id property="contractId" column="contract_id" jdbcType="INTEGER"/>
             <result property="partyAId" column="party_a_id" jdbcType="INTEGER"/>
             <result property="partyBId" column="party_b_id" jdbcType="INTEGER"/>
@@ -32,7 +32,19 @@
         supplement,u_a_money,u_a_time,
         u_b_power,u_b_obligation
     </sql>
-    <select id="selectAllContract" resultType="com.jiata.contract.TContract">
-        select * from tender.t_contract;
+    <insert id="insertContract">
+        insert into t_contract(contract_uid, party_a_id, party_b_id, create_date, modify_date, end_date, title, name,
+                               place, scale, clause, breach, supplement, u_a_money, u_a_time, u_b_power, u_b_obligation)
+        VALUES (#{contractUid},#{partyAId},#{partyBId},#{createDate},#{modifyDate},#{endDate},#{title},#{name},#{place},
+                #{scale},#{clause},#{breach},#{supplement},#{uAMoney},#{uATime},#{uBPower},#{uBObligation})
+    </insert>
+    <delete id="deleteContractById">
+        delete from t_contract where contract_id = #{id}
+    </delete>
+    <select id="selectAllContract" resultType="com.jiata.entity.TContract">
+        select * from t_contract;
+    </select>
+    <select id="selectAllByContractId" resultType="com.jiata.entity.TContract">
+        select * from t_contract where contract_id = #{id};
     </select>
 </mapper>

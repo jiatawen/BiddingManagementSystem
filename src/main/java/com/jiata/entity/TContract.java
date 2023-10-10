@@ -1,4 +1,4 @@
-package com.jiata.contract;
+package com.jiata.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -18,6 +18,12 @@ public class TContract implements Serializable {
      */
     @TableId
     private Integer contractId;
+
+    /**
+     * 
+     */
+    @TableId
+    private String contractUid;
 
     /**
      * 
@@ -114,6 +120,20 @@ public class TContract implements Serializable {
      */
     public void setContractId(Integer contractId) {
         this.contractId = contractId;
+    }
+
+    /**
+     * 
+     */
+    public String getContractUid() {
+        return contractUid;
+    }
+
+    /**
+     * 
+     */
+    public void setContractUid(String contractUid) {
+        this.contractUid = contractUid;
     }
 
     /**
@@ -353,6 +373,7 @@ public class TContract implements Serializable {
         }
         TContract other = (TContract) that;
         return (this.getContractId() == null ? other.getContractId() == null : this.getContractId().equals(other.getContractId()))
+            && (this.getContractUid() == null ? other.getContractUid() == null : this.getContractUid().equals(other.getContractUid()))
             && (this.getPartyAId() == null ? other.getPartyAId() == null : this.getPartyAId().equals(other.getPartyAId()))
             && (this.getPartyBId() == null ? other.getPartyBId() == null : this.getPartyBId().equals(other.getPartyBId()))
             && (this.getCreateDate() == null ? other.getCreateDate() == null : this.getCreateDate().equals(other.getCreateDate()))
@@ -376,6 +397,7 @@ public class TContract implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getContractId() == null) ? 0 : getContractId().hashCode());
+        result = prime * result + ((getContractUid() == null) ? 0 : getContractUid().hashCode());
         result = prime * result + ((getPartyAId() == null) ? 0 : getPartyAId().hashCode());
         result = prime * result + ((getPartyBId() == null) ? 0 : getPartyBId().hashCode());
         result = prime * result + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
@@ -402,6 +424,7 @@ public class TContract implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", contractId=").append(contractId);
+        sb.append(", contractUid=").append(contractUid);
         sb.append(", partyAId=").append(partyAId);
         sb.append(", partyBId=").append(partyBId);
         sb.append(", createDate=").append(createDate);
