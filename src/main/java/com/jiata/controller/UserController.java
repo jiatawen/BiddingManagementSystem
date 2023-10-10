@@ -32,7 +32,7 @@ public class UserController {
 
     @PostMapping("/del")
     public boolean delUser(Integer id){
-        return userService.delUserByid(id);
+        return userService.delUserById(id);
     }
 
     @PostMapping("/modify")

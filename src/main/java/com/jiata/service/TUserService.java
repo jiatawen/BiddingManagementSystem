@@ -16,7 +16,6 @@ public interface TUserService extends IService<TUser> {
     public List<TUser> getAllUser();
     public TUser getUserById(Integer id);
     public Integer insertUser(TUser user);
-    public boolean delUserByid(Integer id);
-
+    public boolean delUserById(Integer id);
     public boolean modifyUser(TUser user);
 }

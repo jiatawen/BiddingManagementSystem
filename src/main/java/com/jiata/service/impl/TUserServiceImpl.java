@@ -39,7 +39,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser>
     }
 
     @Override
-    public boolean delUserByid(Integer id) {
+    public boolean delUserById(Integer id) {
         boolean flag = userMapper.delByPeopleIdBoolean(id);
         return flag;
     }
