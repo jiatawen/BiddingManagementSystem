@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiata.mapper.TUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.jiata.entity.TUser">
+            <id property="peopleId" column="people_id" jdbcType="INTEGER"/>
+            <result property="uType" column="u_type" jdbcType="CHAR"/>
+            <result property="legalName" column="legal_name" jdbcType="VARCHAR"/>
+            <result property="agentName" column="agent_name" jdbcType="VARCHAR"/>
+            <result property="place" column="place" jdbcType="VARCHAR"/>
+            <result property="zipcode" column="zipcode" jdbcType="INTEGER"/>
+            <result property="phone" column="phone" jdbcType="INTEGER"/>
+            <result property="bankId" column="bank_id" jdbcType="INTEGER"/>
+            <result property="bankPlace" column="bank_place" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        people_id,u_type,legal_name,
+        agent_name,place,zipcode,
+        phone,bank_id,bank_place
+    </sql>
+    <insert id="insertUser">
+        insert into t_user(u_type,legal_name, agent_name, place, zipcode, phone, bank_id, bank_place)
+        VALUES (#{uType},#{legalName}, #{agentName}, #{place}, #{zipcode}, #{phone}, #{bankId}, #{bankPlace})
+    </insert>
+    <update id="modifyUser">
+        update t_user
+        set u_type = #{uType} and legal_name = #{legalName} and agent_name = #{agentName} and place = #{place} and
+                     zipcode = #{zipcode} and phone = #{phone} and bank_id = #{bankId} and bank_place = #{bankPlace}
+        where people_id = #{peopleId}
+    </update>
+    <delete id="delByPeopleIdBoolean">
+        delete
+        from t_user
+        where people_id = #{id};
+    </delete>
+    <select id="selectAllByPeopleId" resultType="com.jiata.entity.TUser">
+        select *
+        from t_user
+        where people_id = #{id}
+    </select>
+    <select id="selectAll" resultType="com.jiata.entity.TUser">
+        select * from t_user;
+    </select>
+</mapper>
