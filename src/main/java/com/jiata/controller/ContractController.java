@@ -36,4 +36,9 @@ public class ContractController {
     public boolean delContract(Integer id){
         return contractService.delContract(id);
     }
+
+    @PostMapping("/modify")
+    public boolean modifyContract(TContract contract){
+        return contractService.modifyContract(contract);
+    }
 }

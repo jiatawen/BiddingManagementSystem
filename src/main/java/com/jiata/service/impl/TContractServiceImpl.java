@@ -45,6 +45,12 @@ public class TContractServiceImpl extends ServiceImpl<TContractMapper, TContract
         boolean flag = contractMapper.deleteContractById(id);
         return flag;
     }
+
+    @Override
+    public boolean modifyContract(TContract contract) {
+        boolean flag = contractMapper.modifyContract(contract);
+        return flag;
+    }
 }
 
 

@@ -34,4 +34,9 @@ public class UserController {
     public boolean delUser(Integer id){
         return userService.delUserByid(id);
     }
+
+    @PostMapping("/modify")
+    public boolean modifyUser(TUser user){
+        return userService.modifyUser(user);
+    }
 }
