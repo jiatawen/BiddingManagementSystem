@@ -38,6 +38,16 @@
         VALUES (#{contractUid},#{partyAId},#{partyBId},#{createDate},#{modifyDate},#{endDate},#{title},#{name},#{place},
                 #{scale},#{clause},#{breach},#{supplement},#{uAMoney},#{uATime},#{uBPower},#{uBObligation})
     </insert>
+    <update id="modifyContract">
+        update t_contract
+        set contract_uid = #{contractUid} and party_a_id = #{partyAId} and party_b_id = #{partyBId} and
+                           create_date = #{createDate} and modify_date = #{modifyDate} and
+                           end_date = #{endDate} and title = #{title} and name = #{name} and
+                           place = #{place} and scale = #{scale} and clause = #{clause} and
+                           breach = #{breach} and supplement = #{supplement} and u_a_money = #{uAMoney} and
+                           u_a_time = #{uATime} and u_b_power = #{uBPower} and u_b_obligation = #{uBObligation}
+        where contract_id = #{contractId}
+    </update>
     <delete id="deleteContractById">
         delete from t_contract where contract_id = #{id}
     </delete>

@@ -25,6 +25,12 @@
         insert into t_user(u_type,legal_name, agent_name, place, zipcode, phone, bank_id, bank_place)
         VALUES (#{uType},#{legalName}, #{agentName}, #{place}, #{zipcode}, #{phone}, #{bankId}, #{bankPlace})
     </insert>
+    <update id="modifyUser">
+        update t_user
+        set u_type = #{uType} and legal_name = #{legalName} and agent_name = #{agentName} and place = #{place} and
+                     zipcode = #{zipcode} and phone = #{phone} and bank_id = #{bankId} and bank_place = #{bankPlace}
+        where people_id = #{peopleId}
+    </update>
     <delete id="delByPeopleIdBoolean">
         delete
         from t_user

@@ -2,9 +2,14 @@ package com.jiata.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jiata.entity.TContract;
+import com.jiata.mapper.TUserMapper;
 import com.jiata.service.TContractService;
 import com.jiata.mapper.TContractMapper;
+import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author Jiata
@@ -15,6 +20,31 @@ import org.springframework.stereotype.Service;
 public class TContractServiceImpl extends ServiceImpl<TContractMapper, TContract>
     implements TContractService{
 
+    @Resource
+    private TContractMapper contractMapper;
+    @Override
+    public List<TContract> getAllContract() {
+        List<TContract> contracts = contractMapper.selectAllContract();
+        return contracts;
+    }
+
+    @Override
+    public TContract getContractById(Integer id) {
+        TContract contract = contractMapper.selectAllByContractId(id);
+        return contract;
+    }
+
+    @Override
+    public Integer insertContract(TContract contract) {
+        Integer flag = contractMapper.insertContract(contract);
+        return flag;
+    }
+
+    @Override
+    public boolean delContract(Integer id) {
+        boolean flag = contractMapper.deleteContractById(id);
+        return flag;
+    }
 }
 
 

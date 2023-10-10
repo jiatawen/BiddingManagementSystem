@@ -21,6 +21,8 @@ public interface TUserMapper extends BaseMapper<TUser> {
     public Integer insertUser(TUser user);
 
     public boolean delByPeopleIdBoolean(Integer id);
+
+    public boolean modifyUser(TUser user);
 }
 
 

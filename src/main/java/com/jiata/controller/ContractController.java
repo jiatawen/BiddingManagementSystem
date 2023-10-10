@@ -4,6 +4,7 @@ import com.jiata.entity.TContract;
 import com.jiata.service.impl.TContractServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,20 @@ public class ContractController {
     @GetMapping("/getAll")
     public List<TContract> getAllContract(){
         return contractService.getAllContract();
+    }
+
+    @PostMapping("/getById")
+    public TContract getContractById(Integer id){
+        return contractService.getContractById(id);
+    }
+
+    @PostMapping("/insert")
+    public Integer insertContract(TContract contract){
+        return contractService.insertContract(contract);
+    }
+
+    @PostMapping("/del")
+    public boolean delContract(Integer id){
+        return contractService.delContract(id);
     }
 }

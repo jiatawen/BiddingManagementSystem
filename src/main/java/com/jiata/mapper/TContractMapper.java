@@ -21,6 +21,8 @@ public interface TContractMapper extends BaseMapper<TContract> {
     public Integer insertContract(TContract tContract);
 
     public boolean deleteContractById(Integer id);
+
+    public boolean modifyContract(TContract tContract);
 }
 
 

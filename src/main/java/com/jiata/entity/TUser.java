@@ -45,12 +45,12 @@ public class TUser implements Serializable {
     /**
      * 电话
      */
-    private Integer phone;
+    private String phone;
 
     /**
      * 银行账户
      */
-    private Integer bankId;
+    private String bankId;
 
     /**
      * 开户行
@@ -147,28 +147,28 @@ public class TUser implements Serializable {
     /**
      * 
      */
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
     /**
      * 
      */
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
     /**
      * 
      */
-    public Integer getBankId() {
+    public String getBankId() {
         return bankId;
     }
 
     /**
      * 
      */
-    public void setBankId(Integer bankId) {
+    public void setBankId(String bankId) {
         this.bankId = bankId;
     }
 
