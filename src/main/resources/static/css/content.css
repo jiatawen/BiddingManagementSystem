@@ -1,0 +1,24 @@
+.title1 {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.title2 {
+    margin-top: 800px;
+    text-align: center;
+}
+
+.underline{
+    border-bottom: 1px solid black;
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 280px;
+}
+
+h3{
+    font-size: 30px;
+}
+
+.time span{
+    width: 50px;
+}

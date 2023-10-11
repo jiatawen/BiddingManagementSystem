@@ -27,8 +27,8 @@
     </insert>
     <update id="modifyUser">
         update t_user
-        set u_type = #{uType} and legal_name = #{legalName} and agent_name = #{agentName} and place = #{place} and
-                     zipcode = #{zipcode} and phone = #{phone} and bank_id = #{bankId} and bank_place = #{bankPlace}
+        set u_type = #{uType} , legal_name = #{legalName} , agent_name = #{agentName} , place = #{place} ,
+                     zipcode = #{zipcode} , phone = #{phone} , bank_id = #{bankId} , bank_place = #{bankPlace}
         where people_id = #{peopleId}
     </update>
     <delete id="delByPeopleIdBoolean">

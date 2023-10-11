@@ -4,8 +4,10 @@ function getUrlParam(name) {
     if (r != null) return unescape(r[2]); return null; //返回参数值
 }
 $(document).ready(function start() {
+    
     var peopleId = getUrlParam("peopleId");
-    if (peopleId != null) {
+    
+    if (peopleId != null && peopleId != "") {
         $.ajax(
             {
                 type: "POST",
@@ -29,26 +31,35 @@ function writeAll(data) {
             }
             $(this).find("option").eq(flag).prop("selected", true)
         })
-
+        $("#peopleId").val(people["peopleId"])
         $("#legalName").val(people["legalName"])
         $("#agentName").val(people["agentName"])
         $("#phone").val(people["phone"])
-        $("place").val(people["place"])
+        $("#place").val(people["place"])
         $("#zipcode").val(people["zipcode"])
         $("#bankId").val(people["bankId"])
         $("#bankPlace").val(people["bankPlace"])
     }
 }
 
-$("#frm").submit(function () {
+$("#sub").click(function () {
     let link = "../user/insert"
-    if (peopleId != null) {
+    let errm = "插入失败"
+    if (getUrlParam("peopleId") != null) {
         link = "../user/modify"
+        errm = "修改失败"
     }
     $.ajax({
         url: link,
         type: "POST",
-        data: $("#frm").serialize,
-        success: $()
+        data: $("#frm").serialize(),
+        success:function(flag){
+            if(flag == true){
+                window.location.href=document.referrer;
+            }else{
+                alert(errm)
+            }
+        },
+        error:function(){alert(errm)}
     })
 })

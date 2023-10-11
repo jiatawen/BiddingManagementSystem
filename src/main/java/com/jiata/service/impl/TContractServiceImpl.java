@@ -51,6 +51,11 @@ public class TContractServiceImpl extends ServiceImpl<TContractMapper, TContract
         boolean flag = contractMapper.modifyContract(contract);
         return flag;
     }
+
+    @Override
+    public List<TContract> getByName(String name) {
+        return contractMapper.selectAllByName(name);
+    }
 }
 
 

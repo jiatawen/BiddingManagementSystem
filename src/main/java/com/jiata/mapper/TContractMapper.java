@@ -23,6 +23,8 @@ public interface TContractMapper extends BaseMapper<TContract> {
     public boolean deleteContractById(Integer id);
 
     public boolean modifyContract(TContract tContract);
+
+    public List<TContract> selectAllByName(String name);
 }
 
 

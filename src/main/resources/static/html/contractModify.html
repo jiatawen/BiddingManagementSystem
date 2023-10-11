@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>超市账单管理系统</title>
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        #frm div {
+            margin-top: -5px;
+            margin-bottom: -4px;
+        }
+
+        textarea {
+            width: 740px;
+            height: 150px;
+            margin-top: 13px;
+            resize: none;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header class="publicHeader">
+        <!--头部-->
+        <header class="publicHeader">
+            <h1>招投标管理系统</h1>
+            <div class="publicHeaderR">
+                <a href="javascript:" onclick="window.location.href='./contractList.html'">返回</a>
+            </div>
+        </header>
+        <!--时间-->
+        <section class="publicTime">
+            <span id="time">2015年1月1日11：11 星期一</span>
+            <span id="hours"></span>
+        </section>
+        <!--主体内容-->
+        <section class="publicMian ">
+            <div class="left">
+                <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+                <nav>
+                    <ul class="list">
+                        <li id="active"><a href="contractList.html">合同管理</a></li>
+                        <li><a href="userList.html">用户管理</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right"  style="overflow: scroll;height: 520px;">
+                <div class="location">
+                    <strong>你现在所在的位置是:</strong>
+                    <span>合同管理页面 >> 合同编辑界面</span>
+                </div>
+                <div class="providerAdd">
+                    <form action="" id="frm">
+                        <div style="display: none;">
+                            <input type="text" name="contractId" id="contractId">
+                        </div>
+                        <div>
+                            <label for="partyAId">委托人：</label>
+                            <select name="partyAId" id="partyAId">B
+                                <option value="A">甲方</option>
+                                <option value="B">乙方</option>
+                            </select>
+                            <label for="partyBId" style="margin-left: 12px;">受托人：</label>
+                            <select name="partyBId" id="partyBId">B
+                                <option value="A">甲方</option>
+                                <option value="B">乙方</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="createDate">创建时间：</label>
+                            <input type="date" name="createDate" id="createDate" />
+                            <label for="modifyDate">签订时间：</label>
+                            <input type="date" name="modifyDate" id="modifyDate" />
+                        </div>
+                        <div>
+                            <label for="endDate">到期时间：</label>
+                            <input type="date" name="endDate" id="endDate" />
+                            <label for="uAMoney">金额：</label>
+                            <input type="text" name="uAMoney" id="uAMoney" />
+                        </div>
+
+                        <div>
+                            <label for="contractUid">合同编号：</label>
+                            <input type="text" name="contractUid" id="contractUid" />
+                            <label for="title">合同标题：</label>
+                            <input type="text" name="title" id="title" />
+
+                        </div>
+                        <div>
+                            <label for="name">项目名称：</label>
+                            <input type="text" name="name" id="name" />
+                            <label for="place">地址：</label>
+                            <input type="text" name="place" id="place" />
+                        </div>
+                        <div>
+                            <label for="scale">规模：</label>
+                            <textarea name="scale" id="scale"></textarea>
+                        </div>
+                        <div>
+                            <label for="clause">条款：</label>
+                            <textarea name="clause" id="clause"></textarea>
+                        </div>
+                        <div>
+                            <label for="breach">违约：</label>
+                            <textarea name="breach" id="breach"></textarea>
+                        </div>
+                        <div>
+                            <label for="supplement">补充条款：</label>
+                            <textarea name="supplement" id="supplement"></textarea>
+                        </div>
+                        <div>
+                            <label for="uBPower">被委托方权力：</label>
+                            <textarea name="uBPower" id="uBPower"></textarea>
+                        </div>
+                        <div>
+                            <label for="uBObligation">被委托方义务：</label>
+                            <textarea name="uBObligation" id="uBObligation"></textarea>
+                        </div>
+                        <div class="providerAddBtn">
+                            <!--<a href="#">保存</a>-->
+                            <!--<a href="userList.html">返回</a>-->
+                            <input type="button" value="保存" id="sub" />
+                            <input type="button" value="返回" onclick="window.location.href=document.referrer;" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <footer class="footer">
+        </footer>
+        <script src="../js/time.js"></script>
+        <script src="../js/contractModify.js"></script>
+</body>
+
+</html>

@@ -24,7 +24,7 @@ public interface TUserMapper extends BaseMapper<TUser> {
 
     public boolean modifyUser(TUser user);
 
-    List<TUser> selectAllBylegalName(String legalName);
+    public List<TUser> selectAllBylegalName(String legalName);
 }
 
 

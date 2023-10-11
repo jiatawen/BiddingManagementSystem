@@ -53,7 +53,6 @@ function delUser(uid) {
             data:{'id':uid},
             success:function(msg){
                 if(msg){
-                    alert("删除成功")
                 }else{
                     alert("删除失败")
                 }

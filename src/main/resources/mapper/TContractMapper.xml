@@ -40,12 +40,12 @@
     </insert>
     <update id="modifyContract">
         update t_contract
-        set contract_uid = #{contractUid} and party_a_id = #{partyAId} and party_b_id = #{partyBId} and
-                           create_date = #{createDate} and modify_date = #{modifyDate} and
-                           end_date = #{endDate} and title = #{title} and name = #{name} and
-                           place = #{place} and scale = #{scale} and clause = #{clause} and
-                           breach = #{breach} and supplement = #{supplement} and u_a_money = #{uAMoney} and
-                           u_a_time = #{uATime} and u_b_power = #{uBPower} and u_b_obligation = #{uBObligation}
+        set contract_uid = #{contractUid} , party_a_id = #{partyAId} , party_b_id = #{partyBId} ,
+                           create_date = #{createDate} , modify_date = #{modifyDate} ,
+                           end_date = #{endDate} , title = #{title} , name = #{name} ,
+                           place = #{place} , scale = #{scale} , clause = #{clause} ,
+                           breach = #{breach} , supplement = #{supplement} , u_a_money = #{uAMoney} ,
+                           u_a_time = #{endDate} , u_b_power = #{uBPower} , u_b_obligation = #{uBObligation}
         where contract_id = #{contractId}
     </update>
     <delete id="deleteContractById">
@@ -56,5 +56,8 @@
     </select>
     <select id="selectAllByContractId" resultType="com.jiata.entity.TContract">
         select * from t_contract where contract_id = #{id};
+    </select>
+    <select id="selectAllByName" resultType="com.jiata.entity.TContract">
+        select * from t_contract where name like concat('%',#{name},'%')
     </select>
 </mapper>
