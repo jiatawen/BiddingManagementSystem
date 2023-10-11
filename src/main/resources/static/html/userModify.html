@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>超市账单管理系统</title>
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        #frm div {
+            margin-top: -5px;
+            margin-bottom: -4px;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header class="publicHeader">
+        <!--头部-->
+        <header class="publicHeader">
+            <h1>招投标管理系统</h1>
+            <div class="publicHeaderR">
+                <a href="javascript:logoout()">退出</a>
+            </div>
+        </header>
+        <!--时间-->
+        <section class="publicTime">
+            <span id="time">2015年1月1日11：11 星期一</span>
+            <span id="hours"></span>
+        </section>
+        <!--主体内容-->
+        <section class="publicMian ">
+            <div class="left">
+                <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+                <nav>
+                    <ul class="list">
+                        <li><a href="providerList.html">合同管理</a></li>
+                        <li id="active"><a href="userList.html">用户管理</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <div class="location">
+                    <strong>你现在所在的位置是:</strong>
+                    <span>用户管理页面 >> 用户编辑界面</span>
+                </div>
+                <div class="providerAdd">
+                    <form action="" id="frm">
+                        <div>
+                            <label>用户类型：</label>
+                            <select name="uType" id="uType">B
+                                <option value="A">甲方</option>
+                                <option value="B">乙方</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="legalName">法人：</label>
+                            <input type="text" name="legalName" id="legalName" />
+                            <span>*请输入法人名称</span>
+                        </div>
+                        <div>
+                            <label for="agentName">代理人：</label>
+                            <input type="text" name="agentName" id="agentName" />
+                            <span>*请输入代理人名称</span>
+                        </div>
+
+                        <div>
+                            <label for="phone">联系电话：</label>
+                            <input type="text" name="phone" id="phone" />
+                            <span>*</span>
+                        </div>
+                        <div>
+                            <label for="place">地址：</label>
+                            <input type="text" name="place" id="place" />
+                        </div>
+                        <div>
+                            <label for="zipcode">邮编：</label>
+                            <input type="text" name="zipcode" id="zipcode" />
+                        </div>
+                        <div>
+                            <label for="bankId">银行卡号：</label>
+                            <input type="text" name="bankId" id="bankId" />
+                            <span>*</span>
+                        </div>
+                        <div>
+                            <label for="bankPlace">开户行：</label>
+                            <input type="text" name="bankPlace" id="bankPlace" />
+                            <span>*</span>
+                        </div>
+
+
+                        <div class="providerAddBtn">
+                            <!--<a href="#">保存</a>-->
+                            <!--<a href="userList.html">返回</a>-->
+                            <input type="button" value="保存" id="sub" />
+                            <input type="button" value="返回" onclick="history.back(-1)" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <footer class="footer">
+        </footer>
+        <script src="../js/time.js"></script>
+        <script src="../js/userModify.js"></script>
+</body>
+
+</html>

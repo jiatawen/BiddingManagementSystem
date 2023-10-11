@@ -44,4 +44,7 @@
     <select id="selectAll" resultType="com.jiata.entity.TUser">
         select * from t_user;
     </select>
+    <select id="selectAllBylegalName" resultType="com.jiata.entity.TUser">
+        select * from t_user where legal_name like concat('%',#{legalName},'%')
+    </select>
 </mapper>

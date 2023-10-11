@@ -40,7 +40,7 @@ public class UserController {
         return userService.modifyUser(user);
     }
 
-    @PostMapping("/serachName")
+    @PostMapping("/searchName")
     public List<TUser> getByName(String legalName){
         return userService.getByLegalName(legalName);
     }

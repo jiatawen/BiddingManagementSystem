@@ -35,7 +35,7 @@ function writeAll(data) {
                 "                    <td>" + yonghu[i]["bankId"] + "</td>\n" +
                 "                    <td>" + yonghu[i]["bankPlace"] + "</td>\n" +
                 "                    <td>\n" +
-                "                        <a href=\"userUpdate.html?peopleId=" + yonghu[i]["peopleId"] + "\"><img src=\"../img/xiugai.png\" alt=\"修改\" title=\"修改\"/></a>\n" +
+                "                        <a href=\"./userModify.html?peopleId=" + yonghu[i]["peopleId"] + "\"><img src=\"../img/xiugai.png\" alt=\"修改\" title=\"修改\"/></a>\n" +
                 "                        <a href=\"javascript:delUser(\'" + yonghu[i]["peopleId"] + "\')\" class=\"removeUser\"><img src=\"../img/schu.png\" alt=\"删除\" title=\"删除\"/></a>\n" +
                 "                    </td>\n" +
                 "                </tr>\n"
@@ -66,7 +66,13 @@ function delUser(uid) {
         }
     )
 }
-
-$("#searchButton").click(function search(){
-    alert($("#searchByName").val())
-})
+$("#searchButton").click(search)
+function search(){
+    var legalName = $("#searchByName").val();
+    $.ajax({
+        type:"POST",
+        url:"../user/searchName",
+        data:{'legalName':legalName},
+        success:function (data){writeAll(data)}
+    })
+}
