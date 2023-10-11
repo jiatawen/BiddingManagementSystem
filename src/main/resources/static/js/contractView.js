@@ -67,7 +67,7 @@ function writeContract(data) {
          contract["modifyDate"].substring(5,7) + "月" + 
          contract["modifyDate"].substring(8,10) + "日" + 
           "</span>后生效</p><br><br>" +
-          "<div><img src=\"../img/content.png\" alt=\"\" style=\"width:70%;margin-left:15%;\"></div>"+
+          "<br><br><p><img src=\"../img/content.png\" alt=\"\" style=\"width:70%;margin-left:15%;\"></p><br>"+
           "<p>六、词语定义和适用法律<br>" +
           "1. 词语定义<br>" +
           "<br>" +

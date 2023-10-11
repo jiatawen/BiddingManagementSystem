@@ -17,5 +17,5 @@ public interface TContractService extends IService<TContract> {
     public boolean delContract(Integer id);
     public boolean modifyContract(TContract contract);
 
-    public List<TContract> getByName(String name);
+    public List<TContract> getByName(String title);
 }

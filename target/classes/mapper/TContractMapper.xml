@@ -58,6 +58,6 @@
         select * from t_contract where contract_id = #{id};
     </select>
     <select id="selectAllByName" resultType="com.jiata.entity.TContract">
-        select * from t_contract where name like concat('%',#{name},'%')
+        select * from t_contract where title like concat('%',#{title},'%')
     </select>
 </mapper>

@@ -24,7 +24,7 @@ public interface TContractMapper extends BaseMapper<TContract> {
 
     public boolean modifyContract(TContract tContract);
 
-    public List<TContract> selectAllByName(String name);
+    public List<TContract> selectAllByName(String title);
 }
 
 

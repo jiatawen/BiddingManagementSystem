@@ -53,8 +53,8 @@ public class TContractServiceImpl extends ServiceImpl<TContractMapper, TContract
     }
 
     @Override
-    public List<TContract> getByName(String name) {
-        return contractMapper.selectAllByName(name);
+    public List<TContract> getByName(String title) {
+        return contractMapper.selectAllByName(title);
     }
 }
 

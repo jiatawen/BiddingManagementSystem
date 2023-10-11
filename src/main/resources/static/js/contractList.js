@@ -109,11 +109,11 @@ function delContract(id) {
 
 $("#searchButton").click(search)
 function search(){
-    var name = $("#searchByName").val();
+    var title = $("#searchByName").val();
     $.ajax({
         type:"POST",
         url:"../contract/searchName",
-        data:{'name':name},
+        data:{'title':title},
         success:function (data){writeAll(data)}
     })
 }

@@ -44,7 +44,7 @@ public class ContractController {
     }
 
     @PostMapping("/searchName")
-    public List<TContract> getByName(String name){
-        return contractService.getByName(name);
+    public List<TContract> getByName(String title){
+        return contractService.getByName(title);
     }
 }
