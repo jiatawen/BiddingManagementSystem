@@ -39,4 +39,9 @@ public class UserController {
     public boolean modifyUser(TUser user){
         return userService.modifyUser(user);
     }
+
+    @PostMapping("/serachName")
+    public List<TUser> getByName(String legalName){
+        return userService.getByLegalName(legalName);
+    }
 }

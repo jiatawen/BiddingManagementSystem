@@ -23,6 +23,8 @@ public interface TUserMapper extends BaseMapper<TUser> {
     public boolean delByPeopleIdBoolean(Integer id);
 
     public boolean modifyUser(TUser user);
+
+    List<TUser> selectAllBylegalName(String legalName);
 }
 
 

@@ -49,6 +49,12 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser>
         boolean flag = userMapper.modifyUser(user);
         return flag;
     }
+
+    @Override
+    public List<TUser> getByLegalName(String legalName) {
+        List<TUser> users = userMapper.selectAllBylegalName(legalName);
+        return users;
+    }
 }
 
 

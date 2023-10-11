@@ -18,4 +18,6 @@ public interface TUserService extends IService<TUser> {
     public Integer insertUser(TUser user);
     public boolean delUserById(Integer id);
     public boolean modifyUser(TUser user);
+
+    public List<TUser> getByLegalName(String legalName);
 }
