@@ -30,7 +30,9 @@ function writeAll(data) {
                 type: "POST",
                 data: { "id": contracts[i]["partyAId"] },
                 async: false,
-                success: function (udata) { aName = eval(udata)["legalName"] }
+                success: function (udata) {
+                    aName = eval(udata)["legalName"]
+                }
             })
             $.ajax({
                 url: "../user/getById",
@@ -39,6 +41,12 @@ function writeAll(data) {
                 async: false,
                 success: function (udata) { bName = eval(udata)["legalName"] }
             })
+            if(contracts[i]["partyAId"] == 1||contracts[i]["partyAId"] == 2){
+                aName += "<span style=\"color:red;\">(本单位)</span>"
+            }
+            if(contracts[i]["partyBId"] == 1||contracts[i]["partyBId"] == 2){
+                bName += "<span style=\"color:red;\">(本单位)</span>"
+            }
             contractsHtml += "                <tr>\n" +
                 "                    <td>" + contracts[i]["contractUid"] + "</td>\n" +
                 "                    <td>" + contracts[i]["title"] + "</td>\n" +
@@ -99,7 +107,7 @@ function delContract(id) {
         success: function (data) {
             if (!data) {
                 alert("删除失败")
-                
+
             }
             location.reload();
         },
@@ -108,12 +116,12 @@ function delContract(id) {
 }
 
 $("#searchButton").click(search)
-function search(){
+function search() {
     var title = $("#searchByName").val();
     $.ajax({
-        type:"POST",
-        url:"../contract/searchName",
-        data:{'title':title},
-        success:function (data){writeAll(data)}
+        type: "POST",
+        url: "../contract/searchName",
+        data: { 'title': title },
+        success: function (data) { writeAll(data) }
     })
 }

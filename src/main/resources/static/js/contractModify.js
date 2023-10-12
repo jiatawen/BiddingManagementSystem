@@ -37,11 +37,14 @@ function writeUsers(data) {
         let AHtml = "";
         let BHtml = "";
         for (let i = 0; i < users.length; i++) {
-
+            let mess = "";
+            if(users[i]["peopleId"] == 1||users[i]["peopleId"] == 2){
+                mess = "<span style=\"color:red;\">(本单位)</span>";
+            }
             if (users[i]["uType"] == "A") {
-                AHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + "</option>";
+                AHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess+"</option>";
             } else if (users[i]["uType"] == "B") {
-                BHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + "</option>";
+                BHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess+"</option>";
             }
         }
         $("#partyAId").html(AHtml);
@@ -97,123 +100,141 @@ function subMess() {
 
 var flag = true;
 
-$("input,textarea").blur(function(){
+$("input,textarea").blur(function () {
     check()
 })
 
-function check(){
+function check() {
     let flag = true;
     {
-        if($("#createDate").val() == ""){
+        if ($("#createDate").val() == "") {
             flag = false;
             $("#createDate").css("border", "2px solid red")
-        }else{
+        } else {
             $("#createDate").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#modifyDate").val() == ""){
+        if ($("#modifyDate").val() == "") {
             flag = false;
             $("#modifyDate").css("border", "2px solid red")
-        }else{
+        } else {
             $("#modifyDate").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#title").val() == ""){
+        if ($("#title").val() == "") {
             flag = false;
             $("#title").css("border", "2px solid red")
-        }else{
+        } else {
             $("#title").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#endDate").val() == ""){
+        if ($("#endDate").val() == "") {
             flag = false;
             $("#endDate").css("border", "2px solid red")
-        }else{
+        } else {
             $("#endDate").css("border", "1px solid #4987c0")
         }
     }
     {
         let arg = /^[0-9]+.?[0-9]*$/i
-        if(!arg.test($("#uAMoney").val())){
+        if (!arg.test($("#uAMoney").val())) {
             flag = false;
             $("#uAMoney").css("border", "2px solid red")
-        }else{
+        } else {
             $("#uAMoney").css("border", "1px solid #4987c0")
         }
     }
     {
         let arg = /^\d{12}$/i
-        if(!arg.test($("#contractUid").val())){
-            flag = false;
-            $("#contractUid").css("border", "2px solid red")
-        }else{
-            $("#contractUid").css("border", "1px solid #4987c0")
+        if (getUrlParam("contractId") == null) {
+            $.ajax({
+                url: "../contract/findUid",
+                type: "POST",
+                data: { "uid": $("#contractUid").val() },
+                success: function (data) {
+                    if (data == true) {
+                        flag = false
+                        $("#contractUid").css("border", "2px solid red")
+                    } else {
+                        if (!arg.test($("#contractUid").val())) {
+                            flag = false;
+                            $("#contractUid").css("border", "2px solid red")
+                        } else {
+                            $("#contractUid").css("border", "1px solid #4987c0")
+                        }
+                    }
+                }
+            })
+        } else {
+            $("#contractUid,#partyAId,#partyBId,#createDate").attr("disabled", "true");
+            $("#contractUid,#partyAId,#partyBId,#createDate").attr("disabled", true);
+            $("#contractUid,#partyAId,#partyBId,#createDate").attr("disabled", "disabled");
         }
     }
     {
-        if($("#name").val() == ""){
+        if ($("#name").val() == "") {
             flag = false;
             $("#name").css("border", "2px solid red")
-        }else{
+        } else {
             $("#name").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#place").val() == ""){
+        if ($("#place").val() == "") {
             flag = false;
             $("#place").css("border", "2px solid red")
-        }else{
+        } else {
             $("#place").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#scale").val() == ""){
+        if ($("#scale").val() == "") {
             flag = false;
             $("#scale").css("border", "2px solid red")
-        }else{
+        } else {
             $("#scale").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#clause").val() == ""){
+        if ($("#clause").val() == "") {
             flag = false;
             $("#clause").css("border", "2px solid red")
-        }else{
+        } else {
             $("#clause").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#breach").val() == ""){
+        if ($("#breach").val() == "") {
             flag = false;
             $("#breach").css("border", "2px solid red")
-        }else{
+        } else {
             $("#breach").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#supplement").val() == ""){
+        if ($("#supplement").val() == "") {
             flag = false;
             $("#supplement").css("border", "2px solid red")
-        }else{
+        } else {
             $("#supplement").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#uBPower").val() == ""){
+        if ($("#uBPower").val() == "") {
             flag = false;
             $("#uBPower").css("border", "2px solid red")
-        }else{
+        } else {
             $("#uBPower").css("border", "1px solid #4987c0")
         }
     }
     {
-        if($("#uBObligation").val() == ""){
+        if ($("#uBObligation").val() == "") {
             flag = false;
             $("#uBObligation").css("border", "2px solid red")
-        }else{
+        } else {
             $("#uBObligation").css("border", "1px solid #4987c0")
         }
     }
@@ -225,10 +246,10 @@ function cSub(flag) {
         $("#sub").attr("disabled", "true");
         $("#sub").attr("disabled", true);
         $("#sub").attr("disabled", "disabled");
-        $("#sub").css("background","linear-gradient(to bottom, #8b8b8b, #8b8b8b, #8b8b8b, #8b8b8b, #8b8b8b)")
+        $("#sub").css("background", "linear-gradient(to bottom, #8b8b8b, #8b8b8b, #8b8b8b, #8b8b8b, #8b8b8b)")
     } else {
         $("#sub").removeAttr("disabled");
         $("#sub").attr("disabled", false);
-        $("#sub").css("background","linear-gradient(to bottom, #85c0ec, #6aa7d6, #508dc6, #306fb4, #17559e)")
+        $("#sub").css("background", "linear-gradient(to bottom, #85c0ec, #6aa7d6, #508dc6, #306fb4, #17559e)")
     }
 }

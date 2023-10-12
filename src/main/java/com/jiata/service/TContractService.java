@@ -18,4 +18,6 @@ public interface TContractService extends IService<TContract> {
     public boolean modifyContract(TContract contract);
 
     public List<TContract> getByName(String title);
+
+    public boolean findByUid(String uid);
 }

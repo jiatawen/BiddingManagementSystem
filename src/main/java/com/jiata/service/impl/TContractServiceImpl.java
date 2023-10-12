@@ -56,6 +56,15 @@ public class TContractServiceImpl extends ServiceImpl<TContractMapper, TContract
     public List<TContract> getByName(String title) {
         return contractMapper.selectAllByName(title);
     }
+
+    @Override
+    public boolean findByUid(String uid) {
+        boolean flag = true;
+        if (contractMapper.selectByUid(uid) == null){
+            flag=false;
+        }
+        return flag;
+    }
 }
 
 

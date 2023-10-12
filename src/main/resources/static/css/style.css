@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
 }
-
+#allBody{
+    height: 430px;
+    overflow: scroll;
+    width: 1300px;
+}
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
 /*登录页面*/
 .login_bg {
     background: url("../img/loginBg.jpg") 0 0 repeat-x;

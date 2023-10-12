@@ -60,4 +60,7 @@
     <select id="selectAllByName" resultType="com.jiata.entity.TContract">
         select * from t_contract where title like concat('%',#{title},'%')
     </select>
+    <select id="selectByUid" resultType="com.jiata.entity.TContract">
+        select * from t_contract where contract_uid = #{uid}
+    </select>
 </mapper>

@@ -21,6 +21,9 @@ function writeAll(data) {
     if (data != null) {
         let yonghu = eval(data);
         for (let i = 0; i < yonghu.length; i++) {
+            if(yonghu[i]["peopleId"] == 1 ||yonghu[i]["peopleId"] == 2){
+                yonghu[i]["legalName"] += "<span style=\"color:red;\">(本单位)</span>"
+            }
             let type = "甲方";
             if (yonghu[i]["uType"] == 'B') {
                 type = "乙方";

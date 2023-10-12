@@ -1,9 +1,8 @@
 package com.jiata.controller;
 
 import com.jiata.entity.TContract;
-import com.jiata.entity.TUser;
 import com.jiata.service.impl.TContractServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,7 @@ import java.util.List;
 @RequestMapping("/contract")
 public class ContractController {
 
-    @Autowired
+    @Resource
     private TContractServiceImpl contractService;
 
     @GetMapping("/getAll")
@@ -46,5 +45,10 @@ public class ContractController {
     @PostMapping("/searchName")
     public List<TContract> getByName(String title){
         return contractService.getByName(title);
+    }
+
+    @PostMapping("/findUid")
+    public boolean findByUid(String uid){
+        return contractService.findByUid(uid);
     }
 }
