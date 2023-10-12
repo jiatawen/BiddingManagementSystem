@@ -13,12 +13,12 @@ $(document).ready(function start() {
                 type: "POST",
                 url: "../user/getById",
                 data: { "id": peopleId },
-                success: function (data) { writeAll(data);},
+                success: function (data) { writeAll(data); },
                 error: function () { alert("没有找到该用户！") }
             }
 
         )
-    }else{
+    } else {
         check();
     }
 })
@@ -65,7 +65,7 @@ $("#sub").click(function () {
         error: function () { alert(errm) }
     })
 })
-$(":text").blur(function(){check()})
+$(":text").blur(function () { check() })
 
 function check() {
     let flag = true

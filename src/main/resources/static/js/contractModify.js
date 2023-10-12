@@ -38,13 +38,13 @@ function writeUsers(data) {
         let BHtml = "";
         for (let i = 0; i < users.length; i++) {
             let mess = "";
-            if(users[i]["peopleId"] == 1||users[i]["peopleId"] == 2){
+            if (users[i]["peopleId"] == 1 || users[i]["peopleId"] == 2) {
                 mess = "<span style=\"color:red;\">(本单位)</span>";
             }
             if (users[i]["uType"] == "A") {
-                AHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess+"</option>";
+                AHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess + "</option>";
             } else if (users[i]["uType"] == "B") {
-                BHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess+"</option>";
+                BHtml += "<option value=\"" + users[i]["peopleId"] + "\">" + users[i]["legalName"] + mess + "</option>";
             }
         }
         $("#partyAId").html(AHtml);

@@ -57,7 +57,7 @@ function writeAll(data) {
                 "                    <td>" + contracts[i]["createDate"].substring(0, 10) + "</td>\n" +
                 "                    <td>" + contracts[i]["endDate"].substring(0, 10) + "</td>\n" +
                 "                    <td>\n" +
-                "                        <a href=\"./contractView.html?contractId=" + contracts[i]["contractId"] + "\"><img src=\"../img/read.png\" alt=\"修改\" title=\"修改\"/></a>\n" +
+                "                        <a href=\"./contractView.html?contractId=" + contracts[i]["contractId"] + "\"><img src=\"../img/read.png\" alt=\"查看\" title=\"查看\"/></a>\n" +
                 "                        <a href=\"./contractModify.html?contractId=" + contracts[i]["contractId"] + "\"><img src=\"../img/xiugai.png\" alt=\"修改\" title=\"修改\"/></a>\n" +
                 "                        <a href=\"javascript:delContract(\'" + contracts[i]["contractId"] + "\')\" class=\"removeUser\"><img src=\"../img/schu.png\" alt=\"删除\" title=\"删除\"/></a>\n" +
                 "                    </td>\n" +
