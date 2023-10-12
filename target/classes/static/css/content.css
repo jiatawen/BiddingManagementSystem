@@ -1,0 +1,33 @@
+.title1 {
+    margin-top: 200px;
+    text-align: center;
+    font-family: "方正小标宋简体";
+}
+
+.title2 {
+    margin-top: 800px;
+    text-align: center;
+    font-family: "方正小标宋简体";
+}
+
+p {
+    font-size: 16pt;
+    font-family: 'Times New Roman', "仿宋_GB2312";
+    margin-left: 40px;
+    width: 95%;
+}
+
+.underline {
+    border-bottom: 1px solid black;
+    display: -moz-inline-box;
+    display: inline-block;
+    width: 280px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.time span {
+    width: 50px;
+}
